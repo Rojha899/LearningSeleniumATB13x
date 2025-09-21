@@ -11,12 +11,18 @@ public class TestSelenium26_Input_Checkbox_Radio {
         driver.manage().window().maximize();
         driver.get("https://awesomeqa.com/practice.html");
 
-        WebElement input_first_name = driver.findElement(By.xpath("//input[@name='firstname']"));
-        input_first_name.sendKeys("Ruchi");
+        // Input
+        WebElement firstname = driver.findElement(By.xpath("//input[@name=\"firstname\"]"));
+        firstname.sendKeys("Ruchi");
 
+        // Click Radio button
         WebElement input_gender = driver.findElement(By.xpath("//input[@id=\"sex-1\"]"));
         input_gender.click();
 
+        WebElement radio_button_exp = driver.findElement(By.id("exp-1"));
+        radio_button_exp.click();
+
+        // Select/click on checkbox
         WebElement input_profession = driver.findElement(By.xpath("//input[@id=\"profession-1\"]"));
         input_profession.click();
 
@@ -26,7 +32,7 @@ public class TestSelenium26_Input_Checkbox_Radio {
             throw new RuntimeException(e);
         }
 
-        driver.close();
+        //driver.quit();
 
     }
 }
